@@ -15,7 +15,7 @@ function Categories() {
 
   return (
     <Container>
-      <Table striped bordered hover variant='dark'>
+      <Table bordered hover variant='light' background-color='#02700a'>
         <thead>
           <tr>
             <th>category</th>

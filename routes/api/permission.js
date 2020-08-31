@@ -33,4 +33,10 @@ router.put("/addAdmin", auth, adminAuth, permissions_controller.addAdmin);
 // @access  private & only admin
 router.put("/restrictUser", auth, adminAuth, permissions_controller.restrictUser);
 
+
+// @route   PUT /api/permissions/addPackage
+// @desc    Add permissions to any user to be an Admin
+// @access  private & only admin
+router.put("/addPackage", auth, adminAuth, permissions_controller.addPackage);
+
 module.exports = router;

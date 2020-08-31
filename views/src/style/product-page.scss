@@ -2,17 +2,10 @@
   position: relative;
   line-height: 3rem;
   margin-bottom: 50px;
+  background-color: #fff;
 
   &:before {
-    background: linear-gradient(
-      to right,
-      #cec5c5 25%,
-      #ffcd02 25%,
-      #ffcd02 50%,
-      #e84f47 50%,
-      #e84f47 75%,
-      #65c1ac 75%
-    );
+    background: #fff;
     position: absolute;
     content: "";
     height: 5px;

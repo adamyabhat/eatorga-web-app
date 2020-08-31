@@ -1,16 +1,18 @@
 import React, { useState } from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { logout } from "./../redux/actions/auth-actions/logoutAction";
 import { useDispatch, useSelector } from "react-redux";
 import Search from "./Search";
 import Loader from "react-loader-spinner";
+// import ReactDropdown from 'react-dropdown';
+// import 'react-dropdown/style.css';
 
 import logo from "./../assets/pictures/logo.jpg";
 
 function MainNavbar() {
   const { user, auth, loading } = useSelector(state => state.userrr);
-  
+  console.log(user,auth,loading);
   const dispatch = useDispatch();
   let history = useHistory();
 
@@ -21,20 +23,6 @@ function MainNavbar() {
 
   // to controll toggle and expand
   const [expanded, setExpanded] = useState(false);
-
-  /* Dashboard link 
-  console.log(auth)
-  let dashboard;
-  if (auth.isAdmin || auth.isSeller) {
-    dashboard = (
-      <NavDropdown.Item>
-        <Link className='dropdown-item' to='/dashboard'>
-          <i class='fa fa-tachometer' aria-hidden='true' />
-          Dashboard
-        </Link>
-      </NavDropdown.Item>
-    );
-  }*/
 
   /* sign up link */
   let signUp;
@@ -55,6 +43,16 @@ function MainNavbar() {
       </Link>
     );
   }
+  // let homepageSelector;
+  // if (auth.isCustomer && !loading) {
+  //   const options = [
+  //     'one', 'two', 'three'
+  //   ];
+  //   const defaultOption = options[0];
+  //   homepageSelector = (
+  //     <ReactDropdown options={options} onChange={this.onSelect} value={defaultOption} placeholder="Select an option" />
+  //   )
+  // }
 
   /* drop down menu */
   let userDropDown;
@@ -106,12 +104,12 @@ function MainNavbar() {
   }
 
   return (
-    <Navbar variant='light' expand='xxl' background-color='#02700a' className='main-navbar' expanded={expanded}>
+    <Navbar variant='light' expand='l' background-color='#02700a' className='main-navbar' expanded={expanded}>
       <div>
         <Link to='/'>
           <img
             src={logo}
-            width='150'
+            width='100'
             style={{
               borderStyle:'solid',
               borderColor:'#02700a'
@@ -136,7 +134,7 @@ function MainNavbar() {
         <Nav>
           {user && <div className='welcome'>Hello, {user.firstName}</div>}
           {!user && <div className='welcome'>Hello, visitor</div>}
-          <div className='shop-by'>Shop by</div>
+          {/* <div className='shop-by'>Shop by</div>
           <ul>
             <li>
               <Link
@@ -154,9 +152,9 @@ function MainNavbar() {
                 All Products
               </Link>
             </li>
-          </ul>
+          </ul> */}
           {/* Help and settings */}
-          <div className='shop-by'>help & settings</div>
+          {/* <div className='shop-by'>help & settings</div> */}
           <ul>
             <li>
               <Link
@@ -167,24 +165,37 @@ function MainNavbar() {
                 Your Account
               </Link>
             </li>
-            {/* <li>
-            <Link className='dropdown-item' to='/my_orders'>
+            <li>
+            <Link 
+              to='/my_orders'
+              className='nav-link'
+              onClick={() => setExpanded(false)}
+              >
               <i class='fa fa-folder' aria-hidden='true' />
-              My Orders
+              Your Orders
             </Link>
-            </li> */}
+            </li>
+            <li>
+              <Link to='/cart'
+              className='nav-link'
+              onClick={() => setExpanded(false)}
+              >
+                <i class='fa fa-shopping-cart cart-icon' aria-hidden='true' />
+                Your Cart
+              </Link>
+            </li>
             <li>
               <Link to='/' className='nav-link' onClick={() => setExpanded(false)}>
                 <i class='fa fa-phone' aria-hidden='true'></i>
                 Customer Service
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to='/' className='nav-link' onClick={() => setExpanded(false)}>
                 <i class='fa fa-globe' aria-hidden='true'></i>
                 English
               </Link>
-            </li>
+            </li> */}
             {user && (
               <li>
                 <Link

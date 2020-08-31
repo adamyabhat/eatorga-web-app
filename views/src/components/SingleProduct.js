@@ -199,7 +199,7 @@ function SingleProduct(props) {
         )}
 
         <ProductsCarousel title='Similar Products' productsNumber='4' />
-        <ExploreMore />
+        {/* <ExploreMore /> */}
       </Container>
     );
   }

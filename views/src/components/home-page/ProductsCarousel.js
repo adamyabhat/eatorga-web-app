@@ -34,6 +34,7 @@ class ProductsCarousel extends React.Component {
       speed: 700,
       slidesToShow: productsNumber,
       slidesToScroll: 4,
+      slidesToShow: 4,
       arrows: true,
       prevArrow: <SamplePrevArrow />,
       nextArrow: <SampleNextArrow />,
@@ -52,14 +53,17 @@ class ProductsCarousel extends React.Component {
           settings: {
             slidesToShow: 2,
             slidesToScroll: 2,
-            initialSlide: 2
+            initialSlide: 2,
+            vertical:true
           }
         },
         {
           breakpoint: 480,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            vertical:true,
+            arrows:false
           }
         }
       ]

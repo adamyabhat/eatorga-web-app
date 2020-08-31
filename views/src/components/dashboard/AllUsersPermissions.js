@@ -4,6 +4,7 @@ import { fetchAllUsers } from "../../redux/actions/permissions-actions/fetchAllU
 import { changeShipperPermission } from "../../redux/actions/permissions-actions/shipperPermissionActions";
 import { changeAdminPermission } from "../../redux/actions/permissions-actions/adminPermissionActions";
 import { restrictUserPermission } from "../../redux/actions/permissions-actions/restrictUserActions";
+import { changeUserPackage } from "../../redux/actions/permissions-actions/changePackage";
 import { Container, Table, Button, Col, Row } from "react-bootstrap";
 import { toast, Slide } from "react-toastify";
 import DashboardSidebar from "./DashboardSidebar";
@@ -22,7 +23,7 @@ function AllUsersPermissions() {
   if (!loading && allUsers.length === 0) {
     emptyMessage = (
       <tr>
-        <td>There are no orders yet</td>
+        <td>There are no Users yet</td>
       </tr>
     );
   }
@@ -59,6 +60,7 @@ function AllUsersPermissions() {
                   <th>Username</th>
                   <th>Email</th>
                   <th>Admin</th>
+                  <th>Package</th>
                   <th>Shipper</th>
                   <th>Restrict</th>
                 </tr>
@@ -89,6 +91,23 @@ function AllUsersPermissions() {
                             <option value='true'>Enable</option>
                           </select>
                           {user.isAdmin && <i class='fa fa-check' aria-hidden='true'></i>}
+                        </td>
+
+                        <td>
+                          <select
+                            className='custom-select'
+                            onChange={e => {
+                              givePermission(
+                                changeUserPackage(user._id, e.target.value)
+                              );
+                            }}>
+                            <option disabled selected value=''>
+                              {user.package || 'change'}
+                            </option>
+                            <option value='gold'>gold</option>
+                            <option value='silver'>silver</option>
+                            <option value='prime'>prime</option>
+                          </select>
                         </td>
 
                         <td>

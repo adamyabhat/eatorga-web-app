@@ -178,6 +178,23 @@ exports.addAdmin = (req, res) => {
   }
 };
 
+//handle Put at /api/permissions/addPackage to add admin permissions to any user
+exports.addPackage = (req, res) => {
+  let adminId = req.body.adminId;//comes from frontend
+
+  // add package to user
+    User.findOneAndUpdate(
+      { _id: adminId },
+      { $set: { package: req.body.packageSelected } },
+      { new: true, useFindAndModify: false }
+    ).then(user => {
+      res.status(200).json({
+        message: `user is now a costumer of ${req.body.packageSelected} package `,
+        user
+      });
+    });
+}
+
 //handle Put at /api/permissions/restrictUser to finish the order and move the cart to history
 exports.restrictUser = (req, res) => {
   let userId = req.body.userId;

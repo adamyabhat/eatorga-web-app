@@ -11,6 +11,7 @@ const UserSchema = new Schema({
   nationality: { type: String },
   birthDate: { type: String },
   creationDate: { type: Date, default: Date.now },
+  package: { type: String },
   isAdmin: { type: Boolean },
   isSeller: { type: Boolean },
   isCustomer: { type: Boolean },
