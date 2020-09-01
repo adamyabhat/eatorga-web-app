@@ -1,4 +1,5 @@
 node_modules
 uploads
 package-lock.json
+views/package-lock.json
 .env
