@@ -32,7 +32,7 @@ app.use("/uploads", express.static("uploads"));
 // Database uri
 const dbURI = process.env.DB_URI;
 
-mongoose.connect('mongodb://localhost:27017/myapp', {useNewUrlParser: true});
+mongoose.connect('mongodb://eatorga:eat0rga@ds139470.mlab.com:39470/heroku_p3rfdvkp', {useNewUrlParser: true});
 
 //test database connection
 let db = mongoose.connection;
