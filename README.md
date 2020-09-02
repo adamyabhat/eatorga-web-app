@@ -121,7 +121,7 @@ $ npm run dev (for both client and server side)
 # Author
 
 
-- Github: [@hamohuh](https://github.com/adamyabhat)
+- Github: [@adamya-bhat](https://github.com/adamyabhat)
 - Linkedin: [@adamya-bhat](https://www.linkedin.com/in/adamya-bhat/)
 - Email: [bhatadamya@gmail.com](mailto:bhatadamya@gmail.com)
 
