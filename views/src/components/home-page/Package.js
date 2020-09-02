@@ -73,9 +73,50 @@ function Package() {
       </div>
     )
   }
+  let packageUser;
+  if (auth.isCustomer && !loading && user.package) {
+        packageUser=(
+          <div>
+            <h1 style={{color:'#02700a', margin:'36px'}}>Hello User,</h1>
+            <h5 style={{color:'#02700a', margin:'36px'}}>Register with us for our package service</h5>
+            {packages.map(packageSelected => {
+              if ( packageSelected === user.package) {
+                
+              }
+              return(
+                <Col className='product-card'>
+                  <Card>
+                    <Card.Img
+                      className='product-card-image'
+                      variant='top'
+                      src={packageSelected.image}
+                    />
+                    <Card.Body className='product-details'>
+                      <Card.Title className='product-name'>
+                        {packageSelected.title} Package
+                      </Card.Title>
+                      <Button 
+                        onClick={() => {
+                        setModalShow(true)
+                        setPackageSelected(packageSelected.title)
+                        }}
+                        style={{backgroundColor: '#02700a'}}>
+                          Click to know more!!
+                        </Button>
+                    </Card.Body>
+                  </Card>
+                </ Col>
+              )}
+            )}
+          </div>
+        )
+  }
 
   return (
-    <div>{nonuser}</div>        
+    <div>
+      {nonuser}
+      {packageUser}
+    </div>        
   );
 };
 
@@ -87,14 +128,18 @@ function MyVerticallyCenteredModal(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
+      <Modal.Header 
+        closeButton
+        style={{ backgroundColor:'#02700a' }}>
+        <Modal.Title 
+        style={{color:'white'}}
+        id="contained-modal-title-vcenter" >
           Package Information
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-      <h4>{props.packageSelected} Package</h4>
-        <p>
+      <h4 style={{color:'#02700a'}}>{props.packageSelected} Package</h4>
+        <p style={{color:'#02700a'}}>
           You have to be a registered customer to choose a package.
           The package is coustomised to families!!!
           click on register to signup with eatorga
@@ -102,7 +147,18 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Body>
       <Modal.Footer>
         <Link to={'/signup'}>
-          <Button onClick={props.onHide}>Register</Button>
+          <Button 
+            style={{backgroundColor: '#02700a'}}
+            onClick={props.onHide}>
+              Register
+          </Button>
+        </Link>
+        <Link to={'/login'}>
+          <Button 
+            style={{backgroundColor: '#02700a'}}
+            onClick={props.onHide}>
+              Login
+          </Button>
         </Link>
       </Modal.Footer>
     </Modal>
