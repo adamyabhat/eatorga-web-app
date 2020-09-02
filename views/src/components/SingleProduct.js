@@ -29,6 +29,7 @@ function SingleProduct(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log(props.match.params.id)
     dispatch(fetchSingleProductAction(props.match.params.id));
   }, [dispatch, props.match.params.id]);
 
