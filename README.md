@@ -6,7 +6,7 @@
 > Started from here [curriculum](https://www.theodinproject.com/courses/nodejs/lessons/inventory-application)
 > The Code can be found [here](https://github.com/hamohuh/inventory-application)
 
-### <h2 align="center"> ⚡️⚡️⚡️ &nbsp; [Live Demo](https://afternoon-atoll-93127.herokuapp.com/) ⚡️⚡️⚡️ </h2>
+### <h2 align="center"> ⚡️⚡️⚡️ &nbsp; [Live Demo](https://eatorga.herokuapp.com/) ⚡️⚡️⚡️ </h2>
 
 ## 📜 &nbsp; Table of contents
 
