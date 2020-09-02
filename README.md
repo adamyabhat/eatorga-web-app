@@ -120,13 +120,8 @@ $ npm run dev (for both client and server side)
 
 # Author
 
-👤 &nbsp; **Mohamed Elashmawy**
 
-- Twitter: [@hamohuh](https://twitter.com/hamohuh)
-- Github: [@hamohuh](https://github.com/hamohuh)
-- Linkedin: [@mo-elashmawy](https://www.linkedin.com/in/mo-elashmawy/)
-- Email: [hamodroid@gmail.com](mailto:hamodroid@gmail.com)
+- Github: [@hamohuh](https://github.com/adamyabhat)
+- Linkedin: [@adamya-bhat](https://www.linkedin.com/in/adamya-bhat/)
+- Email: [bhatadamya@gmail.com](mailto:bhatadamya@gmail.com)
 
-## 📝 &nbsp; License
-
-- This project is [MIT](./LICENSE) licensed.
