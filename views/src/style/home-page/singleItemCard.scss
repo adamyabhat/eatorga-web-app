@@ -25,15 +25,16 @@ $main-color: #dd1c1c;
   /*product card details*/
   .product-details {
     border-top: 1px solid rgb(214, 211, 211);
+    background-color: #02700a;
 
     .product-name {
       a {
         text-decoration: none;
-        color: rgb(109, 109, 109);
+        color: #02700a;
         font-weight: 600;
 
         &:hover {
-          color: rgb(150, 44, 44);
+          color: #02700a;
         }
       }
     }
