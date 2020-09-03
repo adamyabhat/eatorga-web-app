@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton, Button } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { logout } from "./../redux/actions/auth-actions/logoutAction";
 import { useDispatch, useSelector } from "react-redux";
@@ -29,7 +29,9 @@ function MainNavbar() {
   if (!auth.isCustomer && !loading) {
     signUp = (
       <Link to='/signup' className='nav-link'>
-        Sign Up /
+        <Button style={{backgroundColor: '#fff', color: '#02700a'}}>
+              Sign Up
+          </Button> 
       </Link>
     );
   }
@@ -39,7 +41,9 @@ function MainNavbar() {
   if (!auth.isCustomer && !loading) {
     login = (
       <Link to='/login' className='nav-link'>
+        <Button style={{backgroundColor: '#fff', color: '#02700a'}}>
         Login
+          </Button> 
       </Link>
     );
   }
@@ -105,25 +109,6 @@ function MainNavbar() {
 
   return (
     <Navbar variant='light' expand='l' background-color='#02700a' className='main-navbar' expanded={expanded}>
-      <div>
-        <Link to='/'>
-          <img
-            src={logo}
-            width='100'
-            style={{
-              borderStyle:'solid',
-              borderColor:'#02700a'
-            }}
-            className='d-inline-block align-top'
-            alt='React Bootstrap logo'
-          />
-        </Link>
-      </div>
-
-      <div className='navbar-login'>
-        {signUp} {login}
-      </div>
-
       <Navbar.Toggle
           aria-controls='basic-navbar-nav'
           className='navbar-toggle'
@@ -213,7 +198,27 @@ function MainNavbar() {
           </ul>
         </Nav>
       </Navbar.Collapse>
+      
+      <div>
+        <Link to='/'>
+          <img
+            src={logo}
+            width='100'
+            style={{
+              borderStyle:'solid',
+              borderColor:'#02700a'
+            }}
+            className='d-inline-block align-top'
+            alt='React Bootstrap logo'
+          />
+        </Link>
+      </div>
 
+      
+      
+      <div className='navbar-login'>
+        {signUp} {login}
+      </div>
       {/* {userDropDown} */}
 
       {/* {auth.isCustomer && (

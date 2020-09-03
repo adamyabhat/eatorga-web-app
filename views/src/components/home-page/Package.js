@@ -48,7 +48,7 @@ function Package() {
                />
             {/* </Link> */}
               <Card.Body className='product-details'>
-                <Card.Title className='product-name'>
+                <Card.Title className='product-name' style={{color:'#fff'}}>
                   {packageSelected.title} Package
                   {/* <Link to={`/product/${product._id}`}>{product.name}</Link> */}
                 </Card.Title>
@@ -58,7 +58,7 @@ function Package() {
                     setModalShow(true)
                     setPackageSelected(packageSelected.title)
                   }}
-                  style={{backgroundColor: '#02700a'}}>Click to know more!!</Button>
+                  style={{backgroundColor: '#fff', color:'#02700a'}}>Click to know more!!</Button>
               </Card.Body>
           </Card>
           </ Col>
