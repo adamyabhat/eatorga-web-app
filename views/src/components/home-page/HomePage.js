@@ -24,12 +24,12 @@ function HomePage() {
       <Tab eventKey="products" title="ALL PRODUCTS">
       <ProductsCarousel title='Our Products' productsNumber='1' />
       </Tab>
-    <Tab eventKey="packages" title="OUR PACKAGES" >
-      {/* <Container fluid>
+    {/* <Tab eventKey="packages" title="OUR PACKAGES" >
+      <Container fluid>
         <Slider />
-      </Container> */}
+      </Container>
       <Package />
-    </Tab>
+    </Tab> */}
     <Tab eventKey="categories" title="ALL CATEGORIES">
       <div style = {{
         paddingTop: '30px'
