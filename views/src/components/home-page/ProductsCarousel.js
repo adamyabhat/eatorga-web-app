@@ -28,51 +28,51 @@ class ProductsCarousel extends React.Component {
 
   render() {
     let productsNumber = this.props.productsNumber;
-    // const settings = {
-    //   dots: true,
-    //   infinite: false,
-    //   speed: 700,
-    //   slidesToShow: productsNumber,
-    //   slidesToScroll: 4,
-    //   slidesToShow: 4,
-    //   arrows: true,
-    //   prevArrow: <SamplePrevArrow />,
-    //   nextArrow: <SampleNextArrow />,
-    //   responsive: [
-    //     {
-    //       breakpoint: 1024,
-    //       settings: {
-    //         slidesToShow: 3,
-    //         slidesToScroll: 3,
-    //         infinite: true,
-    //         dots: true
-    //       }
-    //     },
-    //     {
-    //       breakpoint: 600,
-    //       settings: {
-    //         slidesToShow: 2,
-    //         slidesToScroll: 2,
-    //         initialSlide: 2,
-    //         vertical:true
-    //       }
-    //     },
-    //     {
-    //       breakpoint: 480,
-    //       settings: {
-    //         slidesToShow: 1,
-    //         slidesToScroll: 1,
-    //         vertical:true,
-    //         arrows:false
-    //       }
-    //     }
-    //   ]
-    // };
+    const settings = {
+      dots: true,
+      infinite: false,
+      speed: 700,
+      slidesToShow: productsNumber,
+      slidesToScroll: 4,
+      slidesToShow: 4,
+      arrows: true,
+      prevArrow: <SamplePrevArrow />,
+      nextArrow: <SampleNextArrow />,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2,
+            vertical:true
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            vertical:true,
+            arrows:false
+          }
+        }
+      ]
+    };
     return (
       <div className='featured-products'>
         <h2>{this.props.title}</h2>
         {this.props.products.loading && <ProgressBar animated now={100} />}
-        {/* <Slider {...settings}> */}
+        <Slider {...settings}>
           {!this.props.products.loading &&
             this.props.products.products.map(product => {
               return (
@@ -112,7 +112,7 @@ class ProductsCarousel extends React.Component {
                 </Col>
               );
             })}
-        {/* </Slider> */}
+        </Slider>
       </div>
     );
   }
