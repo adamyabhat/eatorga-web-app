@@ -24,19 +24,19 @@ function HomePage() {
       <Tab eventKey="products" title="ALL PRODUCTS">
       <ProductsCarousel title='Our Products' productsNumber='1' />
       </Tab>
-    <Tab eventKey="packages" title="OUR PACKAGES" >
+    {/* <Tab eventKey="packages" title="OUR PACKAGES" >
       {/* <Container fluid>
         <Slider />
       </Container> */}
       <Package />
-    </Tab>
-    {/* <Tab eventKey="categories" title="ALL CATEGORIES">
+    </Tab> */}
+    <Tab eventKey="categories" title="ALL CATEGORIES">
       <div style = {{
         paddingTop: '30px'
       }}>
         <Categories />
       </div>
-    </Tab> */}
+    </Tab>
     </Tabs>
     // <Container fluid>
     //   <ProductsCarousel title='Popular Products' productsNumber='4' />
